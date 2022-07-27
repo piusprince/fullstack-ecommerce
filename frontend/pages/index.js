@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Products from "./components/Products";
+import { Gallery } from "../styles/Gallery";
 
 export default function Home() {
   // fetch products from strapi backend
@@ -28,9 +29,11 @@ export default function Home() {
 
       <main>
         <h1>Hello there</h1>
-        {products.map((product) => (
-          <Products key={product.attributes.slug} product={product} />
-        ))}
+        <Gallery>
+          {products.map((product) => (
+            <Products key={product.attributes.slug} product={product} />
+          ))}
+        </Gallery>
       </main>
     </div>
   );
