@@ -7,18 +7,25 @@ import {
   Quantity,
   Buy,
 } from "../../styles/ProductDetails";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductData() {
+  // useStateContext() returns an object with the following properties:
+  // quantity: number
+  // setQuantity: function
+  const { quantity, increaseQuantity, decreaseQuantity, addToCart } =
+    useStateContext();
+
   // fetch product url
   const { query } = useRouter();
-  console.log(query);
+  // console.log(query);
 
   // fetch product data with graphql query
   const [results] = useQuery({
     query: GET_PRODUCT_QUERY,
     variables: { slug: query.slug },
   });
-  console.log(results);
+  // console.log(results);
   const { data, fetching, error } = results;
 
   if (fetching) {
@@ -27,7 +34,7 @@ export default function ProductData() {
   if (error) {
     return <p>Oops could not fetch data: {error.message}</p>;
   }
-  console.log(data);
+  // console.log(data);
 
   // get product data
 
@@ -42,11 +49,17 @@ export default function ProductData() {
 
         <Quantity>
           <span>quantity</span>
-          <button>+</button>
-          <p>0</p>
-          <button>-</button>
+          <button onClick={increaseQuantity}>+</button>
+          <p>{quantity}</p>
+          <button onClick={decreaseQuantity} disabled={quantity === 0}>
+            -
+          </button>
         </Quantity>
-        <Buy>Add to cart</Buy>
+        <Buy
+          onClick={() => addToCart(data.products.data[0].attributes, quantity)}
+        >
+          Add to cart
+        </Buy>
       </ProductInfo>
     </DetailsStyle>
   );
