@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   const products = data.products.data;
-  console.log(products);
+  // console.log(products);
 
   return (
     <div>
@@ -28,7 +28,6 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Drip Hub</h1>
         <Gallery>
           {products.map((product) => (
             <Products key={product.attributes.slug} product={product} />
