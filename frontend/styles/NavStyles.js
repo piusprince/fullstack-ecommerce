@@ -6,12 +6,14 @@ export const NavWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
+  position: relative;
 `;
 
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
 
   div {
     margin-left: 3rem;
