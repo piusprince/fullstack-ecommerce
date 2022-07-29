@@ -16,7 +16,6 @@ export default function Nav() {
         </div>
       </NavMenu>
       {showCart && <Cart />}
-      {/* <Cart /> */}
     </NavWrapper>
   );
 }
