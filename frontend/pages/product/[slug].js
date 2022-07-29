@@ -49,11 +49,11 @@ export default function ProductData() {
 
         <Quantity>
           <span>quantity</span>
-          <button onClick={increaseQuantity}>+</button>
-          <p>{quantity}</p>
           <button onClick={decreaseQuantity} disabled={quantity === 0}>
             -
           </button>
+          <p>{quantity}</p>
+          <button onClick={increaseQuantity}>+</button>
         </Quantity>
         <Buy
           onClick={() => addToCart(data.products.data[0].attributes, quantity)}
