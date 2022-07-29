@@ -14,10 +14,11 @@ import {
 } from "react-icons/ai";
 
 export default function Cart() {
-  const { cartItems, setShowCart, addToCart } = useStateContext();
+  const { cartItems, setShowCart, addToCart, removeFromCart } =
+    useStateContext();
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
-      <CartStyle>
+      <CartStyle onClick={(e) => e.stopPropagation()}>
         {cartItems.length < 1 ? (
           <EmptyCart>
             <h3>Your cart is empty</h3>
@@ -41,10 +42,7 @@ export default function Cart() {
                   <span>
                     <strong>Quantity: </strong>
                   </span>
-                  <button
-                    onClick={() => addToCart(item, -1)}
-                    disabled={item.quantity === 1}
-                  >
+                  <button onClick={() => removeFromCart(item)}>
                     <AiFillMinusCircle />
                   </button>
                   <p>{item.quantity}</p>
