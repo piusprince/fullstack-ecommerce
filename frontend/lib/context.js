@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const ShopContext = createContext();
 
 export const StateContext = ({ children }) => {
-  const [showcart, setShowCart] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
 
@@ -36,17 +36,36 @@ export const StateContext = ({ children }) => {
     }
   };
 
+  // remove product from cart
+  const removeFromCart = (product) => {
+    // check if product is in the cart
+    const productExists = cartItems.find((item) => item.slug === product.slug);
+    if (productExists.quantity === 1) {
+      // remove product from cart
+      setCartItems(cartItems.filter((item) => item.slug !== product.slug));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.slug === product.slug
+            ? { ...productExists, quantity: productExists.quantity - 1 }
+            : item
+        )
+      );
+    }
+  };
+
   return (
     <ShopContext.Provider
       value={{
         quantity,
         increaseQuantity,
         decreaseQuantity,
-        showcart,
+        showCart,
         setShowCart,
         cartItems,
         setCartItems,
         addToCart,
+        removeFromCart,
       }}
     >
       {children}
