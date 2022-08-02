@@ -1,4 +1,4 @@
-import { ProductWrapper } from "../../styles/ProductStyle";
+import { ProductInfo, ProductWrapper } from "../../styles/ProductStyle";
 import Link from "next/link";
 
 export default function Products({ product }) {
@@ -8,11 +8,16 @@ export default function Products({ product }) {
     <ProductWrapper>
       <Link href={`/product/${slug}`}>
         <div>
-          <img src={image.data.attributes.formats.small.url} alt="" />
+          <img
+            src={image.data.attributes.formats.small.url}
+            alt="Product image"
+          />
         </div>
       </Link>
-      <h1>{title}</h1>
-      <p>{price}</p>
+      <ProductInfo>
+        <h2>{title}</h2>
+        <p>GHC{price}</p>
+      </ProductInfo>
     </ProductWrapper>
   );
 }
