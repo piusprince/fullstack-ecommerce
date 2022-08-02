@@ -6,6 +6,7 @@ export const DetailsStyle = styled.div`
   margin-top: 5rem;
   img {
     width: 40%;
+    border-radius: 2rem;
   }
 `;
 
