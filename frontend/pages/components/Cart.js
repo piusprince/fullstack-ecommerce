@@ -101,7 +101,7 @@ export default function Cart() {
               <strong>Total: GHC{totalPrice}</strong>
             </p>
 
-            <CheckoutBtn>Checkout</CheckoutBtn>
+            <CheckoutBtn layout>Checkout</CheckoutBtn>
           </div>
         )}
       </CartStyle>
