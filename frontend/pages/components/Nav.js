@@ -10,7 +10,8 @@ export default function Nav() {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
     <NavWrapper>
-      <Link href="/">Drip Hub</Link>
+      <Link href="/">FarmHub</Link>
+
       <NavMenu>
         <div onClick={() => setShowCart(true)}>
           {totalQuantities > 0 && (
