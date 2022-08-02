@@ -6,6 +6,7 @@ import {
   CardInfo,
   EmptyCart,
   QuantityWrapper,
+  CheckoutBtn,
 } from "../../styles/CartStyles";
 import {
   AiOutlineShoppingCart,
@@ -14,7 +15,7 @@ import {
 } from "react-icons/ai";
 
 export default function Cart() {
-  const { cartItems, setShowCart, addToCart, removeFromCart } =
+  const { cartItems, setShowCart, addToCart, removeFromCart, totalPrice } =
     useStateContext();
   return (
     <CartWrapper onClick={() => setShowCart(false)}>
@@ -36,7 +37,7 @@ export default function Cart() {
               <CardInfo>
                 <h3>{item.title}</h3>
                 <p>
-                  <strong>Price: {item.price}</strong>
+                  <strong>Price: GHC{item.price}</strong>
                 </p>
                 <QuantityWrapper>
                   <span>
@@ -53,6 +54,15 @@ export default function Cart() {
               </CardInfo>
             </Card>
           ))
+        )}
+        {cartItems.length >= 0 && (
+          <div>
+            <p>
+              <strong>Total: GHC{totalPrice}</strong>
+            </p>
+
+            <CheckoutBtn>Checkout</CheckoutBtn>
+          </div>
         )}
       </CartStyle>
     </CartWrapper>
