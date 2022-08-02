@@ -42,7 +42,22 @@ export default function ProductData() {
 
   return (
     <DetailsStyle>
-      <img src={image.data.attributes.formats.medium.url} alt={title} />
+      {
+        // render small or medium image depending on status of image
+        image.data.attributes.formats.small.url ? ( // if image is ready
+          <img
+            src={image.data.attributes.formats.small.url}
+            alt="Product image"
+          />
+        ) : (
+          // if image is not ready
+          <img
+            src={image.data.attributes.formats.medium.url}
+            alt="Product image"
+          />
+        )
+      }
+      {/* <img src={image.data.attributes.formats.medium.url} alt={title} /> */}
       <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
