@@ -1,6 +1,7 @@
 import styled from "styled-components";
+const { motion } = require("framer-motion");
 
-export const CartWrapper = styled.div`
+export const CartWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,10 +11,9 @@ export const CartWrapper = styled.div`
   width: 100%;
   z-index: 100;
   background: rgba(0, 0, 0, 0.5);
-  /* display: none; */
 `;
 
-export const CartStyle = styled.div`
+export const CartStyle = styled(motion.div)`
   width: 50%;
   background: #f1f1f1;
   padding: 2rem 5rem;
@@ -21,7 +21,7 @@ export const CartStyle = styled.div`
   position: relative;
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +35,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled(motion.div)`
   width: 50%;
   div {
     display: flex;
@@ -43,7 +43,7 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const EmptyCart = styled.div`
+export const EmptyCart = styled(motion.div)`
   display: grid;
   place-items: center;
   display: flex;
@@ -59,7 +59,7 @@ export const EmptyCart = styled.div`
   }
 `;
 
-export const QuantityWrapper = styled.div`
+export const QuantityWrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,7 +85,7 @@ export const QuantityWrapper = styled.div`
   }
 `;
 
-export const CheckoutBtn = styled.button`
+export const CheckoutBtn = styled(motion.button)`
   font-size: 1.2rem;
   padding: 0.5rem;
   border: none;
@@ -101,3 +101,5 @@ export const CheckoutBtn = styled.button`
     color: #000;
   }
 `;
+
+export const Cards = styled(motion.div)``;
