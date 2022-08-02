@@ -4,6 +4,8 @@ import { NavMenu, NavWrapper } from "../../styles/NavStyles";
 import Cart from "./Cart";
 import { useStateContext } from "../../lib/context";
 
+const { AnimatePresence, motion } = require("framer-motion");
+
 export default function Nav() {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
@@ -11,12 +13,16 @@ export default function Nav() {
       <Link href="/">Drip Hub</Link>
       <NavMenu>
         <div onClick={() => setShowCart(true)}>
-          {totalQuantities > 0 && <span>{totalQuantities}</span>}
+          {totalQuantities > 0 && (
+            <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }}>
+              {totalQuantities}
+            </motion.span>
+          )}
           <AiOutlineShoppingCart fontSize={25} />
           <h3>Cart</h3>
         </div>
       </NavMenu>
-      {showCart && <Cart />}
+      <AnimatePresence>{showCart && <Cart />}</AnimatePresence>
     </NavWrapper>
   );
 }
