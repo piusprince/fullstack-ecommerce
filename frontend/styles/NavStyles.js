@@ -27,4 +27,18 @@ export const NavMenu = styled.div`
     font-size: 1rem;
     padding: 0.25rem;
   }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    background: #ffc107;
+    border-radius: 50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: 0.8rem;
+  }
 `;
