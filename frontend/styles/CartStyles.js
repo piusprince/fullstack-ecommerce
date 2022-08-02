@@ -84,3 +84,20 @@ export const QuantityWrapper = styled.div`
     color: var(--secondary);
   }
 `;
+
+export const CheckoutBtn = styled.button`
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0rem;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+`;
