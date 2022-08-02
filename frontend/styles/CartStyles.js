@@ -11,6 +11,7 @@ export const CartWrapper = styled(motion.div)`
   width: 100%;
   z-index: 100;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
 `;
 
 export const CartStyle = styled(motion.div)`
