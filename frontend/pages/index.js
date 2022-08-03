@@ -8,6 +8,7 @@ import Welcome from "./components/Welcome";
 import Quality from "./components/Quality";
 import Featured from "./components/Featured";
 import More from "./components/More";
+import Promos from "./components/Promos";
 
 export default function Home() {
   // fetch products from strapi backend
@@ -42,6 +43,7 @@ export default function Home() {
           <More />
         </Gallery>
         <Quality />
+        <Promos />
       </main>
     </div>
   );
