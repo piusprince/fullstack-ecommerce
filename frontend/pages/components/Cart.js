@@ -14,6 +14,7 @@ import {
   AiFillMinusCircle,
   AiFillPlusCircle,
 } from "react-icons/ai";
+import getStripe from "../../lib/getStripe";
 
 // Variants with framer motion
 const cardVariant = {
@@ -35,6 +36,22 @@ const cardsVariant = {
 export default function Cart() {
   const { cartItems, setShowCart, addToCart, removeFromCart, totalPrice } =
     useStateContext();
+
+  // Handling payments with stripe
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+    const response = await fetch("/api/stripe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cartItems }),
+    });
+    const data = await response.json();
+    await stripe.redirectToCheckout({
+      sessionId: data.id,
+    });
+  };
   return (
     <CartWrapper
       initial={{ opacity: 0 }}
@@ -67,7 +84,7 @@ export default function Cart() {
             </EmptyCart>
           ) : (
             cartItems.map((item) => (
-              <Card variants={cardVariant} layout key={item.id}>
+              <Card key={item.id} variants={cardVariant} layout>
                 <img
                   src={item.image.data.attributes.formats.thumbnail.url}
                   alt={item.title}
@@ -101,7 +118,9 @@ export default function Cart() {
               <strong>Total: GHC{totalPrice}</strong>
             </p>
 
-            <CheckoutBtn layout>Checkout</CheckoutBtn>
+            <CheckoutBtn layout onClick={handleCheckout}>
+              Checkout
+            </CheckoutBtn>
           </div>
         )}
       </CartStyle>
