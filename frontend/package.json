@@ -17,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-youtube": "^9.0.3",
+    "stripe": "^10.0.0",
     "styled-components": "^5.3.5",
     "urql": "^2.2.3"
   },
