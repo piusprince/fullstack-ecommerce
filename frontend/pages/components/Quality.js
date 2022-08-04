@@ -3,8 +3,8 @@ import { QualityWrapper, TextWrapper, Video } from "../../styles/QualityStyles";
 
 export default function Quality() {
   const opts = {
-    height: "390",
-    width: "640",
+    height: "300",
+    width: "100%",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
