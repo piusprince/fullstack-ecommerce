@@ -2,6 +2,7 @@ import { useStateContext } from "../../lib/context";
 import {
   CartStyle,
   CartWrapper,
+  CloseBtn,
   Cards,
   Card,
   CardInfo,
@@ -13,6 +14,7 @@ import {
   AiOutlineShoppingCart,
   AiFillMinusCircle,
   AiFillPlusCircle,
+  AiOutlineCloseCircle,
 } from "react-icons/ai";
 import getStripe from "../../lib/getStripe";
 
@@ -66,6 +68,10 @@ export default function Cart() {
         exit={{ x: "50%" }}
         onClick={(e) => e.stopPropagation()}
       >
+        <CloseBtn onClick={() => setShowCart(false)}>
+          <AiOutlineCloseCircle />
+        </CloseBtn>
+
         <Cards
           variants={cardsVariant}
           initial="hidden"
