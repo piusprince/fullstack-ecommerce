@@ -8,6 +8,15 @@ export const DetailsStyle = styled.div`
     width: 40%;
     border-radius: 2rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -18,6 +27,14 @@ export const ProductInfo = styled.div`
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    
+    button {
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
 `;
 
 export const Quantity = styled.div`
@@ -38,7 +55,10 @@ export const Quantity = styled.div`
   }
 
   span {
-    color: var(--secondary);
+    color: black;
+    background: #ffc107;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
   }
 `;
 
