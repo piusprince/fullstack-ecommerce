@@ -20,6 +20,17 @@ export const CartStyle = styled(motion.div)`
   padding: 2rem 5rem;
   overflow-y: scroll;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+`;
+
+export const CloseBtn = styled(motion.div)`
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.2rem;
 `;
 
 export const Card = styled(motion.div)`
@@ -31,6 +42,7 @@ export const Card = styled(motion.div)`
   background: #fff;
   padding: 1rem;
   overflow: hidden;
+
   img {
     width: 7rem;
   }
@@ -41,6 +53,11 @@ export const CardInfo = styled(motion.div)`
   div {
     display: flex;
     flex-direction: space-between;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 1rem;
   }
 `;
 
