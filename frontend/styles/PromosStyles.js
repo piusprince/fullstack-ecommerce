@@ -8,10 +8,20 @@ export const PromoWrapper = styled.div`
 
   /* align-items: center;
   justify-content: center; */
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 export const PromoText = styled.div`
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   h1 {
     text-transform: uppercase;
@@ -42,6 +52,11 @@ export const LargeLogo = styled.div`
   background: black;
   border-radius: 20px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+  }
+
   h2 {
     color: white;
     font-size: 3.2rem;
@@ -51,5 +66,9 @@ export const LargeLogo = styled.div`
     background: #ffc107;
     color: black;
     padding: 1rem;
+
+    @media (max-width: 768px) {
+      padding: 0.1rem;
+    }
   }
 `;
