@@ -22,7 +22,7 @@ h3 {
 }
 
 p {
-  line-height: 150%;
+  /* line-height: 150%; */
 }
 
 a {
@@ -43,5 +43,18 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    width: 100%;
   }
 }
