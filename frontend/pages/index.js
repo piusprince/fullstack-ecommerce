@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/dist/client/link";
 import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Products from "./components/Products";
@@ -37,9 +36,13 @@ export default function Home() {
         <Welcome />
         <Featured />
         <Gallery>
-          {products.map((product) => (
-            <Products key={product.attributes.slug} product={product} />
-          ))}
+          {
+            // filter and display first 5 products
+            products.slice(0, 5).map((product) => (
+              <Products key={product.attributes.slug} product={product} />
+            ))
+          }
+
           <More />
         </Gallery>
         <Quality />
