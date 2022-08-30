@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
+
 import { WelcomeWrapper, TextWrapper } from "../../styles/WelcomeStyles";
 
 export default function Welcome() {
@@ -11,7 +12,9 @@ export default function Welcome() {
           vitae, aut voluptatem, debitis quibusdam exercitationem recusandae ut
           provident minus iusto libero in ad eveniet sapiente alias officiis
         </p>
-        <button>Shop Now</button>
+        <Link href="/allProducts">
+          <button>Shop Now</button>
+        </Link>
       </div>
     </WelcomeWrapper>
   );
