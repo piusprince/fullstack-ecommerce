@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useQuery } from "urql";
 import { GET_PRODUCT_QUERY } from "../../lib/query";
 import { useRouter } from "next/router";
@@ -8,13 +9,24 @@ import {
   Buy,
 } from "../../styles/ProductDetails";
 import { useStateContext } from "../../lib/context";
+import toast from "react-hot-toast";
 
 export default function ProductData() {
   // useStateContext() returns an object with the following properties:
   // quantity: number
   // setQuantity: function
-  const { quantity, increaseQuantity, decreaseQuantity, addToCart } =
-    useStateContext();
+  const {
+    quantity,
+    increaseQuantity,
+    decreaseQuantity,
+    addToCart,
+    setQuantity,
+  } = useStateContext();
+
+  // Reset quantity to 1 when changing products
+  useEffect(() => {
+    setQuantity(1);
+  }, []);
 
   // fetch product url
   const { query } = useRouter();
@@ -39,6 +51,11 @@ export default function ProductData() {
   // get product data
 
   const { description, title, image } = data.products.data[0].attributes;
+
+  // make a toast notification
+  const notify = () => {
+    toast.success(`${title} added to cart!`);
+  };
 
   return (
     <DetailsStyle>
@@ -71,7 +88,10 @@ export default function ProductData() {
           <button onClick={increaseQuantity}>+</button>
         </Quantity>
         <Buy
-          onClick={() => addToCart(data.products.data[0].attributes, quantity)}
+          onClick={() => {
+            addToCart(data.products.data[0].attributes, quantity);
+            notify();
+          }}
         >
           Add to cart
         </Buy>
