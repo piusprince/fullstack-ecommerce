@@ -4,7 +4,7 @@ import { NavMenu, NavWrapper } from "../../styles/NavStyles";
 import Cart from "./Cart";
 import { useStateContext } from "../../lib/context";
 import User from "./User";
-import { UseUser } from "@auth0/nextjs-auth0";
+import { useUser } from "@auth0/nextjs-auth0";
 
 const { AnimatePresence, motion } = require("framer-motion");
 
