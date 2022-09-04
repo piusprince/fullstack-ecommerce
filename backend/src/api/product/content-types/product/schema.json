@@ -22,12 +22,12 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "slug": {
       "type": "uid",
@@ -37,6 +37,13 @@
     "price": {
       "type": "float",
       "required": true
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
