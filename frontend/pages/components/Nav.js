@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { NavMenu, NavWrapper } from "../../styles/NavStyles";
+import { Icon, NavMenu, NavWrapper } from "../../styles/NavStyles";
 import Cart from "./Cart";
 import { useStateContext } from "../../lib/context";
 import User from "./User";
@@ -23,7 +23,9 @@ export default function Nav() {
               {totalQuantities}
             </motion.span>
           )}
+
           <AiOutlineShoppingCart fontSize={25} />
+
           <h3>Cart</h3>
         </div>
       </NavMenu>

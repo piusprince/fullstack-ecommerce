@@ -7,6 +7,7 @@ export const NavWrapper = styled.nav`
   align-items: center;
   font-size: 1.2rem;
   position: relative;
+  /* background: white; */
 `;
 
 export const NavMenu = styled.div`
@@ -26,6 +27,11 @@ export const NavMenu = styled.div`
   h3 {
     font-size: 1rem;
     padding: 0.25rem;
+
+    &:hover {
+      color: #ffc107;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   span {
@@ -40,5 +46,12 @@ export const NavMenu = styled.div`
     width: 1.4rem;
     height: 1.4rem;
     font-size: 0.8rem;
+  }
+`;
+
+export const Icon = styled.div`
+  &:hover {
+    color: #ffc107;
+    transition: all 0.2s ease-in-out;
   }
 `;

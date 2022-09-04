@@ -38,7 +38,7 @@ export default function Home() {
         <Gallery>
           {
             // filter and display first 5 products
-            products.slice(0, 5).map((product) => (
+            (products || []).slice(0, 5).map((product) => (
               <Products key={product.attributes.slug} product={product} />
             ))
           }

@@ -54,6 +54,12 @@ export const WelcomeWrapper = styled.image`
       padding: 1rem 2rem;
       border-radius: 10px;
       cursor: pointer;
+
+      &:hover {
+        background: black;
+        color: #ffc107;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 

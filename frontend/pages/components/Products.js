@@ -1,9 +1,13 @@
-import { ProductInfo, ProductWrapper } from "../../styles/ProductStyle";
+import {
+  ImageStyle,
+  ProductInfo,
+  ProductWrapper,
+} from "../../styles/ProductStyle";
 import Link from "next/link";
 
 export default function Products({ product }) {
   // destructuring product object
-  const { title, price, slug, image } = product.attributes;
+  const { title, price, slug, image, video } = product.attributes;
   return (
     <ProductWrapper>
       <Link href={`/product/${slug}`}>
@@ -20,4 +24,13 @@ export default function Products({ product }) {
       </ProductInfo>
     </ProductWrapper>
   );
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const { title, price, slug, image, video } = product.attributes;
+
+  // Pass data to the page via props
+  return { props: { product } };
 }

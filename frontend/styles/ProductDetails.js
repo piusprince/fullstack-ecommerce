@@ -1,3 +1,4 @@
+import { syntaxError } from "graphql";
 import styled from "styled-components";
 
 export const DetailsStyle = styled.div`
@@ -17,6 +18,10 @@ export const DetailsStyle = styled.div`
       margin-bottom: 2rem;
     }
   }
+`;
+
+export const ImageStyle = styled.div`
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const ProductInfo = styled.div`

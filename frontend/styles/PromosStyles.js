@@ -18,6 +18,13 @@ export const PromoWrapper = styled.div`
 
 export const PromoText = styled.div`
   width: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(
+    848px at 10% 20%,
+    rgba(174, 231, 165, 0.9) 0%,
+    rgb(181, 205, 154) 90%
+  );
+  padding: 2rem;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -40,6 +47,12 @@ export const PromoText = styled.div`
     font-weight: 700;
     color: black;
     cursor: pointer;
+
+    &:hover {
+      background: black;
+      color: #ffc107;
+      transition: all 0.3s ease-in-out;
+    }
   }
 `;
 

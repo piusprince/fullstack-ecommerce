@@ -4,7 +4,7 @@ export const FooterWrapper = styled.footer`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   background: var(--primary);
   color: white;
   margin-top: 5rem;

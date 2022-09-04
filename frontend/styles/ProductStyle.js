@@ -6,15 +6,25 @@ export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 
   img {
     width: 100%;
     cursor: pointer;
+
+    &:hover {
+      scale: 1.1;
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   h2 {
     font-size: 1.5rem;
   }
+`;
+
+export const ImageStyle = styled.div`
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const ProductInfo = styled.div`

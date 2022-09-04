@@ -26,6 +26,13 @@ export const QualityWrapper = styled.div`
 `;
 
 export const TextWrapper = styled.div`
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(
+    848px at 10% 20%,
+    rgba(174, 231, 165, 0.9) 0%,
+    rgb(181, 205, 154) 90%
+  );
+  padding: 2rem;
   p {
     margin-top: 2rem;
   }
