@@ -25,12 +25,3 @@ export default function Products({ product }) {
     </ProductWrapper>
   );
 }
-
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const { title, price, slug, image, video } = product.attributes;
-
-  // Pass data to the page via props
-  return { props: { product } };
-}
