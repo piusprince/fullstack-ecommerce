@@ -1,4 +1,5 @@
 import { FooterWrapper } from "../../styles/FooterStyles";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <p>&copy; 2020 FarmHub</p>
       <div>
         <h2>Get to know us</h2>
-        <p>About</p>
+        <Link href="/about">About</Link>
         <p>Careers</p>
       </div>
       <div>
