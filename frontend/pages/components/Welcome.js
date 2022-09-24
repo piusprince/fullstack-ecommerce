@@ -8,9 +8,10 @@ export default function Welcome() {
       <div>
         <h1>The store for farm tools</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro hic
-          vitae, aut voluptatem, debitis quibusdam exercitationem recusandae ut
-          provident minus iusto libero in ad eveniet sapiente alias officiis
+          Wanting to buy a new tool for your farm? We have a wide range of tools
+          for you to choose from. We have tools for all kinds of farms, from
+          small to large. We have tools for all kinds of farms, from small to
+          large.
         </p>
         <Link href="/allProducts">
           <button>Shop Now</button>
